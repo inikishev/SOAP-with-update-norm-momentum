@@ -1,6 +1,8 @@
 # SOAP with update norm momentum
 
-SOAP optimizer modification (original SOAP - https://github.com/nikhilvyas/SOAP/blob/main/soap.py). Updates are normalized to exponential moving average (EMA) of previous updates. For extra stability norm of the EMA is not allowed to grow by more than 1.1 times per step. Basically this is a very simple change but beats other optimizers on 8/10 of my benchmarks, and it can be applied to any other optimizer but I used SOAP because it performed the best in my benchmarks.
+SOAP optimizer modification (original SOAP - https://github.com/nikhilvyas/SOAP/blob/main/soap.py). Updates are normalized to exponential moving average (EMA) of previous updates. For extra stability norm of the EMA is not allowed to grow by more than 1.1 times per step. 
+
+Basically this is a very simple change but beats other optimizers on 8/10 of my benchmarks, and it can be applied to any other optimizer but I used SOAP because it performed the best in my benchmarks.
 
 # Benchmarks
 I have been testing various optimizers on a set of benchmarks and this has beaten all other optimizers on many of them so I decided to upload this. I do a learning rate sweep and plot the loss curve of the best run on the left, and learning rate to loss graph on the right. The loss curve plots are pretty useless IMO but the right side lr plots are quite informative. The graphs are quite a mess though, I do apologize for that and for tiny text.
