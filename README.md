@@ -52,3 +52,6 @@ The goal here is to find a matrix whose inverse is the input matrix, so it is th
 ### Matrix sign
 The goal is to minimize residual between two newton schulz step appled to an input matrix while also minimizing MSE with original matrix, basically its an amalgation of objectives but also mirrors ML performance well for some reason, while L-BFGS hs a slither of lrs with very good performance.
 ![image](https://github.com/user-attachments/assets/c3dd2c81-8e1d-46aa-964f-beec46f590c6)
+
+# benchmarks code
+it is tecnhically available in one of my repos but it is a mess but I can clean it up and upload here if needed
