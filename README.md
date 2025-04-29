@@ -2,14 +2,6 @@
 
 SOAP optimizer modification (original SOAP - https://github.com/nikhilvyas/SOAP/blob/main/soap.py). Updates are normalized to exponential moving average (EMA) of previous updates. For extra stability norm of the EMA is not allowed to grow by more than 1.1 times per step. Basically this is a very simple change but beats other optimizers on 8/10 of my benchmarks.
 
-The algorithm is
-1. Initialize EMA to zeros
-2. Calculate SOAP update
-3. EMA = EMA * 0.99 + update * 0.01
-4. clip EMA norm growth: if 1st step, store EMA's norm, otherwise clip EMA's norm by previous EMA's norm times 1.1
-5. Make SOAP's update norm the same as EMA's update: divide SOAP update by ||SOAP update|| / ||EMA||
-6. Multiple SOAP update by lr and subtract from parameters
-
 # Benchmarks
 I have been testing various optimizers on a set of benchmarks and this has beaten all other optimizers on many of them so I decided to upload this. I do a learning rate sweep and plot the loss curve of the best run on the left, and learning rate to loss on the right. The loss curve plots are pretty useless IMO but the right side lr plots are quite informative. The graphs are quite a mess though, I do apologize for that.
 
