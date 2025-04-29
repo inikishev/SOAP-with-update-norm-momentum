@@ -59,7 +59,7 @@ def normalize_by_update_ema_(
     return update_.div_(denom), prev_ema_norm_
 
 
-class SOAPNormToUpdateEMA(optim.Optimizer):
+class SOAPUpdateNormMomentum(optim.Optimizer):
     """
     Implements SOAP algorithm (https://arxiv.org/abs/2409.11321).
 
